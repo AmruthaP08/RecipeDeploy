@@ -10,7 +10,7 @@ const app= new express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(_dirname,'/build')));
+app.use(express.static(path.join(__dirname,'/build')));
 
 
 app.post('/api/addcuisine',async(req,res)=>{
@@ -77,7 +77,7 @@ app.put('/api/cupdatecuisine/:id',async(req,res)=>{
 })
 
 app.get('/*',function(req,res) {
-    res.sendFile(path.join(_dirname,'/build/index.html')); 
+    res.sendFile(path.join(__dirname,'/build/index.html')); 
 });
 
 
